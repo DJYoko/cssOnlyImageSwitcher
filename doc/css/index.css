@@ -1,9 +1,345 @@
+body {
+  color: #d9d9d9;
+  background-image: url(../img/patrick-fore-562330-unsplash.jpg);
+  background-position: 0% 50%;
+  background-repeat: repeat-x;
+  background-attachment: fixed;
+  background-size: auto 100%;
+  background-color: #464646;
+  -webkit-animation: bgroop 60s linear infinite alternate-reverse;
+  animation: bgroop 60s linear infinite alternate-reverse;
+}
+
+@-webkit-keyframes bgroop {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes bgroop {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.container {
+  padding: 0 0 24px;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 16px;
+  margin: 0;
+  padding: 8px;
+}
+
+.transition-all, .switcher .img-unit, .switch label, .page-description {
+  transition: 250ms all;
+}
+
+.background-full-size, .switcher .img-unit, .switch label {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .switcher {
-  max-width: 640px;
+  max-width: 576px;
+  position: relative;
   margin: 0 auto;
 }
 
 .switcher img {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+.switcher .aspect-keeper {
+  opacity: 0;
+}
+
+.switcher .img-unit {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  opacity: 0;
+  transform: rotateZ(-90deg);
+  transform-origin: 50% 150%;
+}
+
+.switcher .img-unit .inner {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+.switcher .img-unit .inner label {
+  width: 16px;
+  height: 16px;
+  border-top: 8px solid rgba(0, 0, 0, 0);
+  border-bottom: 8px solid rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -8px;
+  cursor: pointer;
+}
+
+.switcher .img-unit .inner label.to-next {
+  right: 8px;
+  border-left: 16px solid #fff;
+}
+
+.switcher .img-unit .inner label.to-prev {
+  left: 8px;
+  border-right: 16px solid #fff;
+}
+
+.switcher input[name="anchor"] {
+  display: none;
+}
+
+.switcher input:checked ~ .img-unit {
+  transform: rotateZ(90deg);
+  opacity: 0;
+  left: 100%;
+}
+
+.switcher input:checked + .img-unit {
+  transform: rotateZ(0deg);
+  left: 0%;
+  opacity: 1;
+}
+
+.switch {
+  margin: 24px 5px 0;
+}
+
+@media screen and (min-width: 992px) {
+  .switch {
+    width: 200%;
+    margin-left: -50%;
+  }
+}
+
+.switch > div {
+  padding: 8px;
+}
+
+.switch label {
+  background-color: rgba(0, 0, 0, 0.5);
   display: block;
   width: 100%;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  cursor: pointer;
+}
+
+.switch label:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.switch img {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  visibility: hidden;
+}
+
+.text-container {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.text-container h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.text-container .text {
+  display: none;
+  min-height: 100px;
+}
+
+.text-container .description {
+  opacity: 0.5;
+}
+
+#img-alies:checked ~ .switch label[for="img-alies"] {
+  border-color: white;
+}
+
+#img-alies + .img-unit,
+label[for="img-alies"] {
+  background-image: url(../img/zodiac_signs/alies.png);
+}
+
+#img-alies:checked ~ .text-container #text-alies {
+  display: block;
+}
+
+#img-taurus:checked ~ .switch label[for="img-taurus"] {
+  border-color: white;
+}
+
+#img-taurus + .img-unit,
+label[for="img-taurus"] {
+  background-image: url(../img/zodiac_signs/taurus.png);
+}
+
+#img-taurus:checked ~ .text-container #text-taurus {
+  display: block;
+}
+
+#img-gemini:checked ~ .switch label[for="img-gemini"] {
+  border-color: white;
+}
+
+#img-gemini + .img-unit,
+label[for="img-gemini"] {
+  background-image: url(../img/zodiac_signs/gemini.png);
+}
+
+#img-gemini:checked ~ .text-container #text-gemini {
+  display: block;
+}
+
+#img-cancer:checked ~ .switch label[for="img-cancer"] {
+  border-color: white;
+}
+
+#img-cancer + .img-unit,
+label[for="img-cancer"] {
+  background-image: url(../img/zodiac_signs/cancer.png);
+}
+
+#img-cancer:checked ~ .text-container #text-cancer {
+  display: block;
+}
+
+#img-leo:checked ~ .switch label[for="img-leo"] {
+  border-color: white;
+}
+
+#img-leo + .img-unit,
+label[for="img-leo"] {
+  background-image: url(../img/zodiac_signs/leo.png);
+}
+
+#img-leo:checked ~ .text-container #text-leo {
+  display: block;
+}
+
+#img-virgo:checked ~ .switch label[for="img-virgo"] {
+  border-color: white;
+}
+
+#img-virgo + .img-unit,
+label[for="img-virgo"] {
+  background-image: url(../img/zodiac_signs/virgo.png);
+}
+
+#img-virgo:checked ~ .text-container #text-virgo {
+  display: block;
+}
+
+#img-libra:checked ~ .switch label[for="img-libra"] {
+  border-color: white;
+}
+
+#img-libra + .img-unit,
+label[for="img-libra"] {
+  background-image: url(../img/zodiac_signs/libra.png);
+}
+
+#img-libra:checked ~ .text-container #text-libra {
+  display: block;
+}
+
+#img-scorpio:checked ~ .switch label[for="img-scorpio"] {
+  border-color: white;
+}
+
+#img-scorpio + .img-unit,
+label[for="img-scorpio"] {
+  background-image: url(../img/zodiac_signs/scorpio.png);
+}
+
+#img-scorpio:checked ~ .text-container #text-scorpio {
+  display: block;
+}
+
+#img-sagittarius:checked ~ .switch label[for="img-sagittarius"] {
+  border-color: white;
+}
+
+#img-sagittarius + .img-unit,
+label[for="img-sagittarius"] {
+  background-image: url(../img/zodiac_signs/sagittarius.png);
+}
+
+#img-sagittarius:checked ~ .text-container #text-sagittarius {
+  display: block;
+}
+
+#img-capricorn:checked ~ .switch label[for="img-capricorn"] {
+  border-color: white;
+}
+
+#img-capricorn + .img-unit,
+label[for="img-capricorn"] {
+  background-image: url(../img/zodiac_signs/capricorn.png);
+}
+
+#img-capricorn:checked ~ .text-container #text-capricorn {
+  display: block;
+}
+
+#img-aquarius:checked ~ .switch label[for="img-aquarius"] {
+  border-color: white;
+}
+
+#img-aquarius + .img-unit,
+label[for="img-aquarius"] {
+  background-image: url(../img/zodiac_signs/aquarius.png);
+}
+
+#img-aquarius:checked ~ .text-container #text-aquarius {
+  display: block;
+}
+
+#img-pisces:checked ~ .switch label[for="img-pisces"] {
+  border-color: white;
+}
+
+#img-pisces + .img-unit,
+label[for="img-pisces"] {
+  background-image: url(../img/zodiac_signs/pisces.png);
+}
+
+#img-pisces:checked ~ .text-container #text-pisces {
+  display: block;
+}
+
+.page-description {
+  color: rgba(255, 255, 255, 0);
+  max-width: 576px;
+  margin: 0 auto;
+  margin-top: 320px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0 16px;
+}
+
+.page-description:hover {
+  color: white;
 }

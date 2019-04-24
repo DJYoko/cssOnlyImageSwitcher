@@ -1,8 +1,207 @@
+
+body {
+  color: #d9d9d9;
+  background-image: url(../img/patrick-fore-562330-unsplash.jpg);   
+  background-position: 0% 50%;   
+  background-repeat:repeat-x;   
+  background-attachment: fixed;   
+  background-size: auto 100%;   
+  background-color: #464646;
+	-webkit-animation: bgroop 60s linear infinite alternate-reverse;
+	animation: bgroop 60s linear infinite alternate-reverse;
+}
+@-webkit-keyframes bgroop {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+@keyframes bgroop {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+.container {
+	padding: 0 0 24px;
+	overflow: hidden;
+}
+
+h1 {
+	font-size: 16px;
+	margin: 0;
+	padding:8px;
+}
+
+@mixin block-img {
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+	visibility: hidden;
+}
+
+.transition-all {
+	transition: 250ms all;
+}
+
+.background-full-size {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
 .switcher {
-    max-width: 640px;
-    margin: 0 auto;
-    img {
-        display: block;
-        width: 100%;
-    }
+	max-width: 576px;
+	position: relative;
+	margin: 0 auto;
+
+	img {
+		@include block-img;
+	}
+
+	.aspect-keeper {
+		opacity: 0;
+	}
+
+	.img-unit {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		left: -100%;
+		opacity: 0;
+		transform:rotateZ(-90deg);
+		transform-origin: 50% 150%;
+		@extend .transition-all;
+		@extend .background-full-size;
+		.inner {
+			width: 100%;
+			position: relative;
+			display: block;
+			label {
+				width: 16px;
+				height:16px;
+				border-top:8px solid rgba(0,0,0,0);
+				border-bottom:8px solid rgba(0,0,0,0);
+				position: absolute;
+				top: 50%;
+				margin-top: -8px;
+				cursor:pointer;
+				&.to-next {
+					right: 8px;
+					border-left:16px solid #fff;
+				}
+				&.to-prev {
+					left: 8px;
+					border-right:16px solid #fff;
+				}
+				
+			}
+			
+		}
+	}
+
+	input {
+		&[name="anchor"] {
+			display: none;
+		}
+
+		&:checked ~ .img-unit {
+			transform:rotateZ(90deg);
+			opacity: 0;
+			left: 100%;
+		}
+
+		&:checked + .img-unit {
+			transform:rotateZ(0deg);
+			left: 0%;
+			opacity: 1;
+		}
+
+	}
+}
+
+.switch {
+	margin:24px 5px 0;
+	
+	@media screen and ( min-width:992px) {
+
+		width:200%;
+		 margin-left:-50%;
+	 }
+	> div {
+		padding: 8px;
+	}
+
+	label {
+		background-color: rgba(0,0,0,0.5);
+		display: block;
+		width: 100%;
+		margin: 0;
+		border-bottom: 1px solid rgba(255,255,255,0);
+		cursor:pointer;
+		@extend .transition-all;
+		@extend .background-full-size;
+		&:hover {
+			background-color:rgba(0,0,0,0.9); 
+		}
+	}
+
+	img {
+		@include block-img;
+	}
+}
+
+.text-container {
+	padding-right:16px;
+	padding-left:16px;
+	h4{
+		font-size:24px;
+		font-weight: bold;
+	}
+	.text {
+		display: none;
+		min-height: 100px;
+	}
+	.description {
+		opacity: 0.5;
+	}
+}
+
+$zodiacSigns: alies, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces;
+
+@each $zodiacSign in $zodiacSigns {
+	#img-#{$zodiacSign}:checked ~ .switch {
+		label[for="img-#{$zodiacSign}"] {
+			border-color: rgba(255,255,255,1);
+		}
+	}
+	
+	#img-#{$zodiacSign} + .img-unit,
+	label[for="img-#{$zodiacSign}"] {
+			background-image:url(../img/zodiac_signs/#{$zodiacSign}.png);
+		}
+	#img-#{$zodiacSign}:checked ~ .text-container {
+		#text-#{$zodiacSign} {
+			display: block;
+		}
+	}
+}
+
+.page-description{
+	color:rgba(255,255,255,0);
+	max-width: 576px;
+	margin: 0 auto;
+	margin-top: 320px;
+	@extend .transition-all;
+	border: 1px solid rgba(255,255,255,0.2);
+	padding: 0 16px;
+	&:hover{
+		color:rgba(255,255,255,1);
+	}
 }
