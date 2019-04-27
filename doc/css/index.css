@@ -5,7 +5,7 @@ body {
   background-repeat: repeat-x;
   background-attachment: fixed;
   background-size: auto 100%;
-  background-color: #464646;
+  background-color: #0C101B;
   -webkit-animation: bgroop 60s linear infinite alternate-reverse;
   animation: bgroop 60s linear infinite alternate-reverse;
 }
