@@ -1,4 +1,3 @@
-
 body {
   color: #d9d9d9;
   background-image: url(../img/patrick-fore-562330-unsplash.jpg);   
@@ -47,11 +46,11 @@ h1 {
 	visibility: hidden;
 }
 
-.transition-all {
+@mixin transition-all {
 	transition: 200ms all;
 }
 
-.background-full-size {
+@mixin background-full-size {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -77,8 +76,8 @@ h1 {
 		opacity: 0;
 		transform:rotateZ(-90deg);
 		transform-origin: 50% 150%;
-		@extend .transition-all;
-		@extend .background-full-size;
+		@include transition-all;
+		@include background-full-size;
 	}
 
 	input {
@@ -151,8 +150,8 @@ h1 {
 		margin: 0;
 		border-bottom: 1px solid rgba(255,255,255,0);
 		cursor:pointer;
-		@extend .transition-all;
-		@extend .background-full-size;
+		@include transition-all;
+		@include background-full-size;
 		&:hover {
 			background-color:rgba(0,0,0,0.9); 
 		}
@@ -181,17 +180,18 @@ h1 {
 
 $zodiacSigns: alies, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces;
 
-@each $zodiacSign in $zodiacSigns {
+@each $zodiacSign in $zodiacSigns {	
+	#img-#{$zodiacSign} + .img-unit,
+	label[for="img-#{$zodiacSign}"] {
+			background-image:url(../img/zodiac_signs/#{$zodiacSign}.png);
+		}
+
 	#img-#{$zodiacSign}:checked ~ .switch {
 		label[for="img-#{$zodiacSign}"] {
 			border-color: rgba(255,255,255,1);
 		}
 	}
-	
-	#img-#{$zodiacSign} + .img-unit,
-	label[for="img-#{$zodiacSign}"] {
-			background-image:url(../img/zodiac_signs/#{$zodiacSign}.png);
-		}
+
 	#img-#{$zodiacSign}:checked ~ .text-container {
 		#text-#{$zodiacSign} {
 			display: block;
@@ -207,8 +207,6 @@ $zodiacSigns: alies, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagitta
 
 #message{
 	max-width: 576px;
-	margin: 0 auto;
-	margin-top: 640px;
-	@extend .transition-all;
-	padding: 0 16px;
+	margin: 1280px auto 0;
+	@include transition-all;
 }
