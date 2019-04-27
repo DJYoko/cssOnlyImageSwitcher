@@ -10,6 +10,7 @@ body {
 	-webkit-animation: bgroop 60s linear infinite alternate-reverse;
 	animation: bgroop 60s linear infinite alternate-reverse;
 }
+
 @-webkit-keyframes bgroop {
 	0% {
 		background-position: 0% 50%;
@@ -60,7 +61,6 @@ h1 {
 	max-width: 576px;
 	position: relative;
 	margin: 0 auto;
-
 	img {
 		@include block-img;
 	}
@@ -79,11 +79,6 @@ h1 {
 		transform-origin: 50% 150%;
 		@extend .transition-all;
 		@extend .background-full-size;
-		.inner {
-			width: 100%;
-			position: relative;
-			display: block;			
-		}
 	}
 
 	input {
@@ -97,6 +92,7 @@ h1 {
 			left: 100%;
 		}
 
+		// current display Image
 		&:checked + .img-unit {
 			transform:rotateZ(0deg);
 			left: 0%;
@@ -140,9 +136,7 @@ h1 {
 
 .switch {
 	margin:24px 5px 0;
-	
 	@media screen and ( min-width:992px) {
-
 		width:200%;
 		 margin-left:-50%;
 	 }
