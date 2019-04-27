@@ -205,15 +205,10 @@ $zodiacSigns: alies, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagitta
 	}
 }
 
-.page-description{
-	color:rgba(255,255,255,0);
+#message{
 	max-width: 576px;
 	margin: 0 auto;
-	margin-top: 320px;
+	margin-top: 640px;
 	@extend .transition-all;
-	border: 1px solid rgba(255,255,255,0.2);
 	padding: 0 16px;
-	&:hover{
-		color:rgba(255,255,255,1);
-	}
 }

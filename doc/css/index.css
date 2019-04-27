@@ -39,7 +39,7 @@ h1 {
   padding: 8px;
 }
 
-.transition-all, .switcher .img-unit, .switch label, .page-description {
+.transition-all, .switcher .img-unit, .switch label, #message {
   transition: 200ms all;
 }
 
@@ -387,15 +387,9 @@ label[for="img-pisces"] {
   display: block;
 }
 
-.page-description {
-  color: rgba(255, 255, 255, 0);
+#message {
   max-width: 576px;
   margin: 0 auto;
-  margin-top: 320px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 640px;
   padding: 0 16px;
-}
-
-.page-description:hover {
-  color: white;
 }
