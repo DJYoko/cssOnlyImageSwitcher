@@ -7,7 +7,7 @@
 selectable image switcher **without JS**.
 
 ### build command
-`npm run start`
+`npm run gulp`
 
 ### framework & libraries
 - [Bootstrap](https://getbootstrap.com/)
