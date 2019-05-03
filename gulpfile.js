@@ -7,10 +7,10 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./docs/css/')));
 });
 
-gulp.task('default', function(){
+gulp.task('default', function () {
 
     return (gulp.watch(
         './src/css/*.scss',
         gulp.series('sass')));
-    
+
 });
