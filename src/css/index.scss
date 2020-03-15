@@ -14,6 +14,7 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 100% 50%;
   }
@@ -23,10 +24,12 @@ body {
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 100% 50%;
   }
 }
+
 .container {
   padding: 0 0 24px;
   overflow: hidden;
@@ -60,6 +63,7 @@ h1 {
   max-width: 576px;
   position: relative;
   margin: 0 auto;
+
   img {
     @include block-img;
   }
@@ -85,14 +89,14 @@ h1 {
       display: none;
     }
 
-    &:checked ~ .img-unit {
+    &:checked~.img-unit {
       transform: rotateZ(90deg);
       opacity: 0;
       left: 100%;
     }
 
     // current display Image
-    &:checked + .img-unit {
+    &:checked+.img-unit {
       transform: rotateZ(0deg);
       left: 0%;
       opacity: 1;
@@ -105,12 +109,14 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
+
   .arrow-unit {
     width: 100%;
     width: 100%;
     overflow: visible;
     display: none;
   }
+
   label {
     width: 16px;
     height: 16px;
@@ -120,10 +126,12 @@ h1 {
     top: 50%;
     margin-top: -8px;
     cursor: pointer;
+
     &.to-next {
       right: 8px;
       border-left: 16px solid #fff;
     }
+
     &.to-prev {
       left: 8px;
       border-right: 16px solid #fff;
@@ -133,11 +141,13 @@ h1 {
 
 .switch {
   margin: 24px 5px 0;
+
   @media screen and (min-width: 992px) {
     width: 200%;
     margin-left: -50%;
   }
-  > div {
+
+  >div {
     padding: 8px;
   }
 
@@ -150,6 +160,7 @@ h1 {
     cursor: pointer;
     @include transition-all;
     @include background-full-size;
+
     &:hover {
       background-color: rgba(0, 0, 0, 0.9);
     }
@@ -163,28 +174,43 @@ h1 {
 .text-container {
   padding-right: 16px;
   padding-left: 16px;
+
   h4 {
     font-size: 24px;
     font-weight: bold;
   }
+
   .text {
     display: none;
     min-height: 100px;
   }
+
   .description {
     opacity: 0.5;
   }
 }
 
-$zodiacSigns: alies, taurus, gemini, cancer, leo, virgo, libra, scorpio, sagittarius, capricorn, aquarius, pisces;
+$zodiacSigns: alies,
+taurus,
+gemini,
+cancer,
+leo,
+virgo,
+libra,
+scorpio,
+sagittarius,
+capricorn,
+aquarius,
+pisces;
 
 @each $zodiacSign in $zodiacSigns {
-  #img-#{$zodiacSign} + .img-unit,
+
+  #img-#{$zodiacSign}+.img-unit,
   label[for="img-#{$zodiacSign}"] {
     background-image: url(../img/zodiac_signs/#{$zodiacSign}.png);
   }
 
-  #img-#{$zodiacSign}:checked ~ {
+  #img-#{$zodiacSign}:checked~ {
     .switch {
       label[for="img-#{$zodiacSign}"] {
         border-color: rgba(255, 255, 255, 1);
