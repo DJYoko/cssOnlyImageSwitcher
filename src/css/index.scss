@@ -73,7 +73,7 @@ h1 {
   }
 
 
-  .img-unit {
+  &__imgWrap {
     width: 100%;
     position: absolute;
     top: 0;
@@ -90,14 +90,14 @@ h1 {
       display: none;
     }
 
-    &:checked~.img-unit {
+    &:checked~.l-switcher__imgWrap {
       transform: rotateZ(90deg);
       opacity: 0;
       left: 100%;
     }
 
     // current display Image
-    &:checked+.img-unit {
+    &:checked+.l-switcher__imgWrap {
       transform: rotateZ(0deg);
       left: 0%;
       opacity: 1;
@@ -206,7 +206,7 @@ pisces;
 
 @each $zodiacSign in $zodiacSigns {
 
-  #img-#{$zodiacSign}+.img-unit,
+  #img-#{$zodiacSign}+.l-switcher__imgWrap,
   label[for="img-#{$zodiacSign}"] {
     background-image: url(../img/zodiac_signs/#{$zodiacSign}.png);
   }
