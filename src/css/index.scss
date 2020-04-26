@@ -59,7 +59,11 @@ h1 {
   background-size: contain;
 }
 
-.switcher {
+.u-aspect-keeper {
+  opacity: 0;
+}
+
+.l-switcher {
   max-width: 576px;
   position: relative;
   margin: 0 auto;
@@ -68,9 +72,6 @@ h1 {
     @include block-img;
   }
 
-  .aspect-keeper {
-    opacity: 0;
-  }
 
   .img-unit {
     width: 100%;

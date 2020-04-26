@@ -39,13 +39,17 @@ h1 {
   padding: 8px;
 }
 
-.switcher {
+.u-aspect-keeper {
+  opacity: 0;
+}
+
+.l-switcher {
   max-width: 576px;
   position: relative;
   margin: 0 auto;
 }
 
-.switcher img {
+.l-switcher img {
   width: 100%;
   display: block;
   margin: 0;
@@ -53,11 +57,7 @@ h1 {
   visibility: hidden;
 }
 
-.switcher .aspect-keeper {
-  opacity: 0;
-}
-
-.switcher .img-unit {
+.l-switcher .img-unit {
   width: 100%;
   position: absolute;
   top: 0;
@@ -71,17 +71,17 @@ h1 {
   background-size: contain;
 }
 
-.switcher input[name="anchor"] {
+.l-switcher input[name="anchor"] {
   display: none;
 }
 
-.switcher input:checked ~ .img-unit {
+.l-switcher input:checked ~ .img-unit {
   transform: rotateZ(90deg);
   opacity: 0;
   left: 100%;
 }
 
-.switcher input:checked + .img-unit {
+.l-switcher input:checked + .img-unit {
   transform: rotateZ(0deg);
   left: 0%;
   opacity: 1;
