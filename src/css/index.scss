@@ -6,11 +6,11 @@ body {
   background-attachment: fixed;
   background-size: auto 100%;
   background-color: #0c101b;
-  -webkit-animation: bgroop 60s linear infinite alternate-reverse;
-  animation: bgroop 60s linear infinite alternate-reverse;
+  -webkit-animation: bgLoop 300s linear infinite alternate-reverse;
+  animation: bgLoop 300s linear infinite alternate-reverse;
 }
 
-@-webkit-keyframes bgroop {
+@-webkit-keyframes bgLoop {
   0% {
     background-position: 0% 50%;
   }
@@ -20,7 +20,7 @@ body {
   }
 }
 
-@keyframes bgroop {
+@keyframes bgLoop {
   0% {
     background-position: 0% 50%;
   }
@@ -41,7 +41,7 @@ h1 {
   padding: 8px;
 }
 
-@mixin block-img {
+@mixin blockImg {
   width: 100%;
   display: block;
   margin: 0;
@@ -53,26 +53,27 @@ h1 {
   transition: 200ms all;
 }
 
-@mixin background-full-size {
+@mixin background-fullSize {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-.switcher {
+.u-aspectKeeper {
+  opacity: 0;
+}
+
+.l-switcher {
   max-width: 576px;
   position: relative;
   margin: 0 auto;
 
   img {
-    @include block-img;
+    @include blockImg;
   }
 
-  .aspect-keeper {
-    opacity: 0;
-  }
 
-  .img-unit {
+  &__imgWrap {
     width: 100%;
     position: absolute;
     top: 0;
@@ -81,7 +82,7 @@ h1 {
     transform: rotateZ(-90deg);
     transform-origin: 50% 150%;
     @include transition-all;
-    @include background-full-size;
+    @include background-fullSize;
   }
 
   input {
@@ -89,14 +90,14 @@ h1 {
       display: none;
     }
 
-    &:checked~.img-unit {
+    &:checked~.l-switcher__imgWrap {
       transform: rotateZ(90deg);
       opacity: 0;
       left: 100%;
     }
 
     // current display Image
-    &:checked+.img-unit {
+    &:checked+.l-switcher__imgWrap {
       transform: rotateZ(0deg);
       left: 0%;
       opacity: 1;
@@ -104,20 +105,20 @@ h1 {
   }
 }
 
-.arrow-container {
+.l-arrowContainer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 
-  .arrow-unit {
+  &__arrowPair {
     width: 100%;
     width: 100%;
     overflow: visible;
     display: none;
   }
 
-  label {
+  &__arrow {
     width: 16px;
     height: 16px;
     border-top: 8px solid rgba(0, 0, 0, 0);
@@ -127,19 +128,38 @@ h1 {
     margin-top: -8px;
     cursor: pointer;
 
-    &.to-next {
+    &.toNext {
       right: 8px;
       border-left: 16px solid #fff;
     }
 
-    &.to-prev {
+    &.toPrev {
       left: 8px;
       border-right: 16px solid #fff;
     }
   }
 }
 
-.switch {
+.l-textContainer {
+  padding-right: 16px;
+  padding-left: 16px;
+
+  h4 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &__text {
+    display: none;
+    min-height: 100px;
+  }
+
+  &__description {
+    opacity: 0.5;
+  }
+}
+
+.l-switch {
   margin: 24px 5px 0;
 
   @media screen and (min-width: 992px) {
@@ -159,7 +179,7 @@ h1 {
     border-bottom: 1px solid rgba(255, 255, 255, 0);
     cursor: pointer;
     @include transition-all;
-    @include background-full-size;
+    @include background-fullSize;
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.9);
@@ -167,26 +187,7 @@ h1 {
   }
 
   img {
-    @include block-img;
-  }
-}
-
-.text-container {
-  padding-right: 16px;
-  padding-left: 16px;
-
-  h4 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  .text {
-    display: none;
-    min-height: 100px;
-  }
-
-  .description {
-    opacity: 0.5;
+    @include blockImg;
   }
 }
 
@@ -205,25 +206,25 @@ pisces;
 
 @each $zodiacSign in $zodiacSigns {
 
-  #img-#{$zodiacSign}+.img-unit,
+  #img-#{$zodiacSign}+.l-switcher__imgWrap,
   label[for="img-#{$zodiacSign}"] {
     background-image: url(../img/zodiac_signs/#{$zodiacSign}.png);
   }
 
   #img-#{$zodiacSign}:checked~ {
-    .switch {
+    .l-switch {
       label[for="img-#{$zodiacSign}"] {
         border-color: rgba(255, 255, 255, 1);
       }
     }
 
-    .text-container {
+    .l-textContainer {
       #text-#{$zodiacSign} {
         display: block;
       }
     }
 
-    .arrow-container {
+    .l-arrowContainer {
       #arrow-#{$zodiacSign} {
         display: block;
       }
@@ -231,7 +232,7 @@ pisces;
   }
 }
 
-#message {
+.l-message {
   max-width: 576px;
   margin: 1280px auto 0;
   @include transition-all;
