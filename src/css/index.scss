@@ -111,7 +111,7 @@ h1 {
   left: 0;
   width: 100%;
 
-  &__arrow-unit {
+  &__arrowPair {
     width: 100%;
     width: 100%;
     overflow: visible;
@@ -137,6 +137,25 @@ h1 {
       left: 8px;
       border-right: 16px solid #fff;
     }
+  }
+}
+
+.l-textContainer {
+  padding-right: 16px;
+  padding-left: 16px;
+
+  h4 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  &__text {
+    display: none;
+    min-height: 100px;
+  }
+
+  &__description {
+    opacity: 0.5;
   }
 }
 
@@ -172,25 +191,6 @@ h1 {
   }
 }
 
-.l-textContainer {
-  padding-right: 16px;
-  padding-left: 16px;
-
-  h4 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  &__text {
-    display: none;
-    min-height: 100px;
-  }
-
-  &__description {
-    opacity: 0.5;
-  }
-}
-
 $zodiacSigns: alies,
 taurus,
 gemini,
@@ -212,13 +212,13 @@ pisces;
   }
 
   #img-#{$zodiacSign}:checked~ {
-    .switch {
+    .l-switch {
       label[for="img-#{$zodiacSign}"] {
         border-color: rgba(255, 255, 255, 1);
       }
     }
 
-    .text-container {
+    .l-textContainer {
       #text-#{$zodiacSign} {
         display: block;
       }

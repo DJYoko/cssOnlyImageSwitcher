@@ -94,7 +94,7 @@ h1 {
   width: 100%;
 }
 
-.l-arrowContainer__arrow-unit {
+.l-arrowContainer__arrowPair {
   width: 100%;
   width: 100%;
   overflow: visible;
@@ -120,6 +120,25 @@ h1 {
 .l-arrowContainer__arrow.to-prev {
   left: 8px;
   border-right: 16px solid #fff;
+}
+
+.l-textContainer {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.l-textContainer h4 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.l-textContainer__text {
+  display: none;
+  min-height: 100px;
+}
+
+.l-textContainer__description {
+  opacity: 0.5;
 }
 
 .l-switch {
@@ -162,35 +181,16 @@ h1 {
   visibility: hidden;
 }
 
-.l-textContainer {
-  padding-right: 16px;
-  padding-left: 16px;
-}
-
-.l-textContainer h4 {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.l-textContainer__text {
-  display: none;
-  min-height: 100px;
-}
-
-.l-textContainer__description {
-  opacity: 0.5;
-}
-
 #img-alies + .l-switcher__imgWrap,
 label[for="img-alies"] {
   background-image: url(../img/zodiac_signs/alies.png);
 }
 
-#img-alies:checked ~ .switch label[for="img-alies"] {
+#img-alies:checked ~ .l-switch label[for="img-alies"] {
   border-color: white;
 }
 
-#img-alies:checked ~ .text-container #text-alies {
+#img-alies:checked ~ .l-textContainer #text-alies {
   display: block;
 }
 
@@ -203,11 +203,11 @@ label[for="img-taurus"] {
   background-image: url(../img/zodiac_signs/taurus.png);
 }
 
-#img-taurus:checked ~ .switch label[for="img-taurus"] {
+#img-taurus:checked ~ .l-switch label[for="img-taurus"] {
   border-color: white;
 }
 
-#img-taurus:checked ~ .text-container #text-taurus {
+#img-taurus:checked ~ .l-textContainer #text-taurus {
   display: block;
 }
 
@@ -220,11 +220,11 @@ label[for="img-gemini"] {
   background-image: url(../img/zodiac_signs/gemini.png);
 }
 
-#img-gemini:checked ~ .switch label[for="img-gemini"] {
+#img-gemini:checked ~ .l-switch label[for="img-gemini"] {
   border-color: white;
 }
 
-#img-gemini:checked ~ .text-container #text-gemini {
+#img-gemini:checked ~ .l-textContainer #text-gemini {
   display: block;
 }
 
@@ -237,11 +237,11 @@ label[for="img-cancer"] {
   background-image: url(../img/zodiac_signs/cancer.png);
 }
 
-#img-cancer:checked ~ .switch label[for="img-cancer"] {
+#img-cancer:checked ~ .l-switch label[for="img-cancer"] {
   border-color: white;
 }
 
-#img-cancer:checked ~ .text-container #text-cancer {
+#img-cancer:checked ~ .l-textContainer #text-cancer {
   display: block;
 }
 
@@ -254,11 +254,11 @@ label[for="img-leo"] {
   background-image: url(../img/zodiac_signs/leo.png);
 }
 
-#img-leo:checked ~ .switch label[for="img-leo"] {
+#img-leo:checked ~ .l-switch label[for="img-leo"] {
   border-color: white;
 }
 
-#img-leo:checked ~ .text-container #text-leo {
+#img-leo:checked ~ .l-textContainer #text-leo {
   display: block;
 }
 
@@ -271,11 +271,11 @@ label[for="img-virgo"] {
   background-image: url(../img/zodiac_signs/virgo.png);
 }
 
-#img-virgo:checked ~ .switch label[for="img-virgo"] {
+#img-virgo:checked ~ .l-switch label[for="img-virgo"] {
   border-color: white;
 }
 
-#img-virgo:checked ~ .text-container #text-virgo {
+#img-virgo:checked ~ .l-textContainer #text-virgo {
   display: block;
 }
 
@@ -288,11 +288,11 @@ label[for="img-libra"] {
   background-image: url(../img/zodiac_signs/libra.png);
 }
 
-#img-libra:checked ~ .switch label[for="img-libra"] {
+#img-libra:checked ~ .l-switch label[for="img-libra"] {
   border-color: white;
 }
 
-#img-libra:checked ~ .text-container #text-libra {
+#img-libra:checked ~ .l-textContainer #text-libra {
   display: block;
 }
 
@@ -305,11 +305,11 @@ label[for="img-scorpio"] {
   background-image: url(../img/zodiac_signs/scorpio.png);
 }
 
-#img-scorpio:checked ~ .switch label[for="img-scorpio"] {
+#img-scorpio:checked ~ .l-switch label[for="img-scorpio"] {
   border-color: white;
 }
 
-#img-scorpio:checked ~ .text-container #text-scorpio {
+#img-scorpio:checked ~ .l-textContainer #text-scorpio {
   display: block;
 }
 
@@ -322,11 +322,11 @@ label[for="img-sagittarius"] {
   background-image: url(../img/zodiac_signs/sagittarius.png);
 }
 
-#img-sagittarius:checked ~ .switch label[for="img-sagittarius"] {
+#img-sagittarius:checked ~ .l-switch label[for="img-sagittarius"] {
   border-color: white;
 }
 
-#img-sagittarius:checked ~ .text-container #text-sagittarius {
+#img-sagittarius:checked ~ .l-textContainer #text-sagittarius {
   display: block;
 }
 
@@ -339,11 +339,11 @@ label[for="img-capricorn"] {
   background-image: url(../img/zodiac_signs/capricorn.png);
 }
 
-#img-capricorn:checked ~ .switch label[for="img-capricorn"] {
+#img-capricorn:checked ~ .l-switch label[for="img-capricorn"] {
   border-color: white;
 }
 
-#img-capricorn:checked ~ .text-container #text-capricorn {
+#img-capricorn:checked ~ .l-textContainer #text-capricorn {
   display: block;
 }
 
@@ -356,11 +356,11 @@ label[for="img-aquarius"] {
   background-image: url(../img/zodiac_signs/aquarius.png);
 }
 
-#img-aquarius:checked ~ .switch label[for="img-aquarius"] {
+#img-aquarius:checked ~ .l-switch label[for="img-aquarius"] {
   border-color: white;
 }
 
-#img-aquarius:checked ~ .text-container #text-aquarius {
+#img-aquarius:checked ~ .l-textContainer #text-aquarius {
   display: block;
 }
 
@@ -373,11 +373,11 @@ label[for="img-pisces"] {
   background-image: url(../img/zodiac_signs/pisces.png);
 }
 
-#img-pisces:checked ~ .switch label[for="img-pisces"] {
+#img-pisces:checked ~ .l-switch label[for="img-pisces"] {
   border-color: white;
 }
 
-#img-pisces:checked ~ .text-container #text-pisces {
+#img-pisces:checked ~ .l-textContainer #text-pisces {
   display: block;
 }
 
