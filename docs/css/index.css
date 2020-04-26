@@ -87,21 +87,21 @@ h1 {
   opacity: 1;
 }
 
-.arrow-container {
+.l-arrowContainer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
 
-.arrow-container .arrow-unit {
+.l-arrowContainer__arrow-unit {
   width: 100%;
   width: 100%;
   overflow: visible;
   display: none;
 }
 
-.arrow-container label {
+.l-arrowContainer__arrow {
   width: 16px;
   height: 16px;
   border-top: 8px solid rgba(0, 0, 0, 0);
@@ -112,12 +112,12 @@ h1 {
   cursor: pointer;
 }
 
-.arrow-container label.to-next {
+.l-arrowContainer__arrow.to-next {
   right: 8px;
   border-left: 16px solid #fff;
 }
 
-.arrow-container label.to-prev {
+.l-arrowContainer__arrow.to-prev {
   left: 8px;
   border-right: 16px solid #fff;
 }
@@ -162,22 +162,22 @@ h1 {
   visibility: hidden;
 }
 
-.text-container {
+.l-textContainer {
   padding-right: 16px;
   padding-left: 16px;
 }
 
-.text-container h4 {
+.l-textContainer h4 {
   font-size: 24px;
   font-weight: bold;
 }
 
-.text-container .text {
+.l-textContainer__text {
   display: none;
   min-height: 100px;
 }
 
-.text-container .description {
+.l-textContainer__description {
   opacity: 0.5;
 }
 
@@ -194,7 +194,7 @@ label[for="img-alies"] {
   display: block;
 }
 
-#img-alies:checked ~ .arrow-container #arrow-alies {
+#img-alies:checked ~ .l-arrowContainer #arrow-alies {
   display: block;
 }
 
@@ -211,7 +211,7 @@ label[for="img-taurus"] {
   display: block;
 }
 
-#img-taurus:checked ~ .arrow-container #arrow-taurus {
+#img-taurus:checked ~ .l-arrowContainer #arrow-taurus {
   display: block;
 }
 
@@ -228,7 +228,7 @@ label[for="img-gemini"] {
   display: block;
 }
 
-#img-gemini:checked ~ .arrow-container #arrow-gemini {
+#img-gemini:checked ~ .l-arrowContainer #arrow-gemini {
   display: block;
 }
 
@@ -245,7 +245,7 @@ label[for="img-cancer"] {
   display: block;
 }
 
-#img-cancer:checked ~ .arrow-container #arrow-cancer {
+#img-cancer:checked ~ .l-arrowContainer #arrow-cancer {
   display: block;
 }
 
@@ -262,7 +262,7 @@ label[for="img-leo"] {
   display: block;
 }
 
-#img-leo:checked ~ .arrow-container #arrow-leo {
+#img-leo:checked ~ .l-arrowContainer #arrow-leo {
   display: block;
 }
 
@@ -279,7 +279,7 @@ label[for="img-virgo"] {
   display: block;
 }
 
-#img-virgo:checked ~ .arrow-container #arrow-virgo {
+#img-virgo:checked ~ .l-arrowContainer #arrow-virgo {
   display: block;
 }
 
@@ -296,7 +296,7 @@ label[for="img-libra"] {
   display: block;
 }
 
-#img-libra:checked ~ .arrow-container #arrow-libra {
+#img-libra:checked ~ .l-arrowContainer #arrow-libra {
   display: block;
 }
 
@@ -313,7 +313,7 @@ label[for="img-scorpio"] {
   display: block;
 }
 
-#img-scorpio:checked ~ .arrow-container #arrow-scorpio {
+#img-scorpio:checked ~ .l-arrowContainer #arrow-scorpio {
   display: block;
 }
 
@@ -330,7 +330,7 @@ label[for="img-sagittarius"] {
   display: block;
 }
 
-#img-sagittarius:checked ~ .arrow-container #arrow-sagittarius {
+#img-sagittarius:checked ~ .l-arrowContainer #arrow-sagittarius {
   display: block;
 }
 
@@ -347,7 +347,7 @@ label[for="img-capricorn"] {
   display: block;
 }
 
-#img-capricorn:checked ~ .arrow-container #arrow-capricorn {
+#img-capricorn:checked ~ .l-arrowContainer #arrow-capricorn {
   display: block;
 }
 
@@ -364,7 +364,7 @@ label[for="img-aquarius"] {
   display: block;
 }
 
-#img-aquarius:checked ~ .arrow-container #arrow-aquarius {
+#img-aquarius:checked ~ .l-arrowContainer #arrow-aquarius {
   display: block;
 }
 
@@ -381,7 +381,7 @@ label[for="img-pisces"] {
   display: block;
 }
 
-#img-pisces:checked ~ .arrow-container #arrow-pisces {
+#img-pisces:checked ~ .l-arrowContainer #arrow-pisces {
   display: block;
 }
 
