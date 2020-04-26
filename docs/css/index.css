@@ -385,7 +385,7 @@ label[for="img-pisces"] {
   display: block;
 }
 
-#message {
+.l-message {
   max-width: 576px;
   margin: 1280px auto 0;
   transition: 200ms all;
