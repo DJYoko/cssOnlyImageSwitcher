@@ -122,22 +122,22 @@ h1 {
   border-right: 16px solid #fff;
 }
 
-.switch {
+.l-switch {
   margin: 24px 5px 0;
 }
 
 @media screen and (min-width: 992px) {
-  .switch {
+  .l-switch {
     width: 200%;
     margin-left: -50%;
   }
 }
 
-.switch > div {
+.l-switch > div {
   padding: 8px;
 }
 
-.switch label {
+.l-switch label {
   background-color: rgba(0, 0, 0, 0.5);
   display: block;
   width: 100%;
@@ -150,11 +150,11 @@ h1 {
   background-size: contain;
 }
 
-.switch label:hover {
+.l-switch label:hover {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
-.switch img {
+.l-switch img {
   width: 100%;
   display: block;
   margin: 0;
