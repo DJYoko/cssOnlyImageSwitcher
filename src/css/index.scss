@@ -105,20 +105,20 @@ h1 {
   }
 }
 
-.arrow-container {
+.l-arrowContainer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 
-  .arrow-unit {
+  &__arrow-unit {
     width: 100%;
     width: 100%;
     overflow: visible;
     display: none;
   }
 
-  label {
+  &__arrow {
     width: 16px;
     height: 16px;
     border-top: 8px solid rgba(0, 0, 0, 0);
@@ -224,7 +224,7 @@ pisces;
       }
     }
 
-    .arrow-container {
+    .l-arrowContainer {
       #arrow-#{$zodiacSign} {
         display: block;
       }
