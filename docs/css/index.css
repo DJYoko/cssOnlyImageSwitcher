@@ -6,8 +6,8 @@ body {
   background-attachment: fixed;
   background-size: auto 100%;
   background-color: #0c101b;
-  -webkit-animation: bgLoop 60s linear infinite alternate-reverse;
-  animation: bgLoop 60s linear infinite alternate-reverse;
+  -webkit-animation: bgLoop 300s linear infinite alternate-reverse;
+  animation: bgLoop 300s linear infinite alternate-reverse;
 }
 
 @-webkit-keyframes bgLoop {
