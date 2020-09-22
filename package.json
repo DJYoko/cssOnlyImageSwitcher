@@ -4,8 +4,8 @@
   },
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2",
-    "tar": "^6.0.1"
+    "gulp-sass": "^4.1.0",
+    "tar": "^6.0.5"
   },
   "dependencies": {}
 }
